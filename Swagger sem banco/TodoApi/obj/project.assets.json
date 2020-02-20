@@ -193,11 +193,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\valdelei.braga\\source\\repos\\Swagger sem banco\\TodoApi\\TodoApi.csproj",
+      "projectUniqueName": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\Swagger sem banco\\TodoApi\\TodoApi.csproj",
       "projectName": "TodoApi",
-      "projectPath": "C:\\Users\\valdelei.braga\\source\\repos\\Swagger sem banco\\TodoApi\\TodoApi.csproj",
+      "projectPath": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\Swagger sem banco\\TodoApi\\TodoApi.csproj",
       "packagesPath": "C:\\Users\\valdelei.braga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\valdelei.braga\\source\\repos\\Swagger sem banco\\TodoApi\\obj\\",
+      "outputPath": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\Swagger sem banco\\TodoApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

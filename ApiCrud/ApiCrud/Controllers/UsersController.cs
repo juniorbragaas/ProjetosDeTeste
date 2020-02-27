@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiCrud.Models;
+using ApiCrud.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -14,24 +15,141 @@ namespace ApiCrud.Controllers
     public class UsersController : ControllerBase
     {
 
-        private readonly APIContext _context;
-        public UsersController(APIContext context)
+        IUsers userRepository;
+        public UsersController(IUsers _userRepository)
         {
-            _context = context;
+            userRepository = _userRepository;
         }
+
 
 
         [HttpGet]
-        public IEnumerable<Users> GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return _context.Users.ToList();
+            try
+            {
+                var users = await userRepository.GetAll();
+                if (users == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(users);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+
         }
+       
 
         [HttpGet("{id}")]
-        public async Task<Users> GetById(int? id)
+        public async Task<IActionResult> GetById(int? id)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(m => m.Id == id);
-            return user;
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                var user = await userRepository.GetById(id);
+
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(user);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost]
+        [Route("Add")]
+        public async Task<IActionResult> Add([FromBody]Users model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var id = await userRepository.Add(model);
+                    if (id > 0)
+                    {
+                        return Ok(id);
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
+                }
+                catch (Exception)
+                {
+
+                    return BadRequest();
+                }
+
+            }
+
+            return BadRequest();
+        }
+
+        [HttpDelete]
+        [Route("Del")]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            int result = 0;
+
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                result = await userRepository.Delete(id);
+                if (result == 0)
+                {
+                    return NotFound();
+                }
+                return Ok();
+            }
+            catch (Exception)
+            {
+
+                return BadRequest();
+            }
+        }
+
+        [HttpPut]
+        [Route("Upd")]
+        public async Task<IActionResult> Update([FromBody]Users model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await userRepository.Update(model);
+
+                    return Ok();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType().FullName ==
+                             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException")
+                    {
+                        return NotFound();
+                    }
+
+                    return BadRequest();
+                }
+            }
+
+            return BadRequest();
         }
     }
 }

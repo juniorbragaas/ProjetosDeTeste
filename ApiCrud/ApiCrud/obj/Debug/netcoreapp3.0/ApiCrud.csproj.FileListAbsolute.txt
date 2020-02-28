@@ -55,3 +55,4 @@ D:\Repositorios\ProjetosDeTeste\ApiCrud\ApiCrud\obj\Debug\netcoreapp3.0\ApiCrud.
 D:\Repositorios\ProjetosDeTeste\ApiCrud\ApiCrud\obj\Debug\netcoreapp3.0\ApiCrud.pdb
 D:\Repositorios\ProjetosDeTeste\ApiCrud\ApiCrud\bin\Debug\netcoreapp3.0\Dapper.dll
 D:\Repositorios\ProjetosDeTeste\ApiCrud\ApiCrud\obj\Debug\netcoreapp3.0\ApiCrud.MvcApplicationPartsAssemblyInfo.cache
+D:\Repositorios\ProjetosDeTeste\ApiCrud\ApiCrud\obj\Debug\netcoreapp3.0\ApiCrud.csprojAssemblyReference.cache

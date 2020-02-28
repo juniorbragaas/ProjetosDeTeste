@@ -15,13 +15,11 @@ namespace ApiCrud.Controllers
     public class UsersController : ControllerBase
     {
 
-        IUsers userRepository;
-        public UsersController(IUsers _userRepository)
+        IUsersRepository userRepository;
+        public UsersController(IUsersRepository _userRepository)
         {
             userRepository = _userRepository;
         }
-
-
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -29,7 +27,7 @@ namespace ApiCrud.Controllers
             try
             {
                 var users = await userRepository.GetAll();
-                if (users == null)
+                if (users== null)
                 {
                     return NotFound();
                 }
@@ -42,45 +40,42 @@ namespace ApiCrud.Controllers
             }
 
         }
-       
-
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int? id)
+        public async Task<IActionResult> GetById(int? Id)
         {
-            if (id == null)
+            if (Id == null)
             {
                 return BadRequest();
             }
 
             try
             {
-                var user = await userRepository.GetById(id);
+                var post = await userRepository.GetById(Id);
 
-                if (user == null)
+                if (post == null)
                 {
                     return NotFound();
                 }
 
-                return Ok(user);
+                return Ok(post);
             }
             catch (Exception)
             {
                 return BadRequest();
             }
         }
-
         [HttpPost]
         [Route("Add")]
-        public async Task<IActionResult> Add([FromBody]Users model)
+        public async Task<IActionResult> AddPost([FromBody]Users model)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    var id = await userRepository.Add(model);
-                    if (id > 0)
+                    var postId = await userRepository.Add(model);
+                    if (postId > 0)
                     {
-                        return Ok(id);
+                        return Ok(postId);
                     }
                     else
                     {
@@ -97,21 +92,20 @@ namespace ApiCrud.Controllers
 
             return BadRequest();
         }
-
         [HttpDelete]
-        [Route("Del")]
-        public async Task<IActionResult> Delete(int? id)
+        [Route("Delete")]
+        public async Task<IActionResult> DeletePost(int? Id)
         {
             int result = 0;
 
-            if (id == null)
+            if (Id == null)
             {
                 return BadRequest();
             }
 
             try
             {
-                result = await userRepository.Delete(id);
+                result = await userRepository.Delete(Id);
                 if (result == 0)
                 {
                     return NotFound();
@@ -124,10 +118,9 @@ namespace ApiCrud.Controllers
                 return BadRequest();
             }
         }
-
         [HttpPut]
-        [Route("Upd")]
-        public async Task<IActionResult> Update([FromBody]Users model)
+        [Route("Update")]
+        public async Task<IActionResult> UpdatePost([FromBody]Users model)
         {
             if (ModelState.IsValid)
             {
@@ -151,5 +144,7 @@ namespace ApiCrud.Controllers
 
             return BadRequest();
         }
+
+
     }
 }

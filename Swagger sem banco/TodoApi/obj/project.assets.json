@@ -183,10 +183,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Swashbuckle.AspNetCore >= 5.0.0",
-      "Swashbuckle.AspNetCore.Swagger >= 5.0.0",
-      "Swashbuckle.AspNetCore.SwaggerGen >= 5.0.0",
-      "Swashbuckle.AspNetCore.SwaggerUI >= 5.0.0"
+      "Swashbuckle.AspNetCore >= 5.0.0"
     ]
   },
   "packageFolders": {
@@ -232,18 +229,6 @@
       "netcoreapp3.1": {
         "dependencies": {
           "Swashbuckle.AspNetCore": {
-            "target": "Package",
-            "version": "[5.0.0, )"
-          },
-          "Swashbuckle.AspNetCore.Swagger": {
-            "target": "Package",
-            "version": "[5.0.0, )"
-          },
-          "Swashbuckle.AspNetCore.SwaggerGen": {
-            "target": "Package",
-            "version": "[5.0.0, )"
-          },
-          "Swashbuckle.AspNetCore.SwaggerUI": {
             "target": "Package",
             "version": "[5.0.0, )"
           }

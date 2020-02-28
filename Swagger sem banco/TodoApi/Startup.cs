@@ -29,50 +29,7 @@ namespace TodoApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-               
-
-                c.SwaggerDoc("v1", new OpenApiInfo {
-                    Title = "Minha Primeira API",
-                    Description = "Um exemplo de aplicação ASP.NET Core Web API",
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Wladimilson",
-                        Email = "contato@treinaweb.com.br"
-                    },
-                    License = new OpenApiLicense
-                    {
-                        Name = "User",
-                        Url = new Uri("https://www.globo.com/")
-
-                    },
-
-
-                    Version = "v1" }); ; ;
-
-                var security = new Dictionary<string, IEnumerable<string>>
-    {
-        {"Bearer", new string[] { }},
-    };
-                var seguranca = new OpenApiSecurityScheme
-                {
-                    In = ParameterLocation.Header,
-                    Description = "Bearer 123456",
-                    Name = "Authorization",
-                    Type = SecuritySchemeType.ApiKey
-                };
-                c.AddSecurityDefinition("Bearer",seguranca);
-
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement
-{
-    {
-        new OpenApiSecurityScheme
-        {
-            Reference = new OpenApiReference {
-                Type = ReferenceType.SecurityScheme,
-                Id = "Bearer" }
-        }, new List<string>() }
-});
-
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
         }
 
@@ -86,9 +43,8 @@ namespace TodoApi
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Minha Primeira API V1");
-                //c.RoutePrefix = string.Empty;
-                c.RoutePrefix = "api/swagger";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.RoutePrefix = string.Empty;
             });
             if (env.IsDevelopment())
             {

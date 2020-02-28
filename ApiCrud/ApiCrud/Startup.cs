@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiCrud.Models;
+using ApiCrud.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,10 @@ namespace ApiCrud
         {
             var connection = @"Data Source=DESKTOP-72FLPN6\SQLEXPRESS;Initial Catalog=API;Persist Security Info=True;User ID=sa;Password=admin123";
             services.AddDbContext<APIContext>(options => options.UseSqlServer(connection));
+
+            services.AddScoped<IUsersRepository, UsersRepository>();
+
+
             services.AddControllers();
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using ApiCrud.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -24,7 +25,6 @@ namespace ApiCrud.Models
             modelBuilder.Entity<Users>(entity =>
             {
                 entity.ToTable("users");
-
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .ValueGeneratedNever();

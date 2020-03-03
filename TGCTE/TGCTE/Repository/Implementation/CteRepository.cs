@@ -1,33 +1,34 @@
-﻿using MyCoreAPIDemo.Entities;
-using MyCoreAPIDemo.Repository.Contract;
+﻿using Microsoft.AspNetCore.Authentication;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TGCTE.Entities;
+using TGCTE.Repository.Contract;
 
-namespace MyCoreAPIDemo.Repository.Implementation
+namespace TGCTE.Repository.Implementation
 {
-    public class LibraryRepository: ILibraryRepository<Users>
+    public class CteRepository : ICteRepository
     {
-        readonly LibraryContext _libraryContext;
+        readonly BaseContext _libraryContext;
 
-        public LibraryRepository(LibraryContext context)
+        public CteRepository(BaseContext context)
         {
             _libraryContext = context;
         }
 
-        public IEnumerable<Users> GetAllAuthor()
+        public IEnumerable<Cte> GetAll()
         {
-            return _libraryContext.Users.ToList();
+            return _libraryContext.Cte.ToList();
         }
 
-        //public Author GetAuthor(Guid authorId)
+        //public Cte GetById(int Id)
         //{
         //    try
         //    {
-        //        return _libraryContext.Authors.Where(e => e.AuthorId == authorId).FirstOrDefault();
+        //        return _libraryContext.Users.Where(e => e.Id == Id).FirstOrDefault();
         //    }
-        //    catch(Exception ex)
+        //    catch (Exception ex)
         //    {
         //        //log exception
         //        return null;
@@ -106,6 +107,5 @@ namespace MyCoreAPIDemo.Repository.Implementation
         //        //log exception
         //        return 0;
         //    }
-        //}
     }
 }

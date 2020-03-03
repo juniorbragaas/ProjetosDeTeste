@@ -11,11 +11,11 @@ namespace MyCoreAPIDemo.GraphQL
 {
     public class AppQuery : ObjectGraphType
     {
-        public AppQuery(ILibraryRepository<Users> repository)
+        public AppQuery(IUsersRepository<Users> repository)
         {
             Field<ListGraphType<UsersType>>(
                "users",
-               resolve: context => repository.GetAllAuthor()
+               resolve: context => repository.GetAll()
            ) ;
         }
     }

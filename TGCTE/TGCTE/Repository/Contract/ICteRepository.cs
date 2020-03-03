@@ -1,18 +1,17 @@
-﻿using MyCoreAPIDemo.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TGCTE.Entities;
 
-namespace MyCoreAPIDemo.Repository.Contract
+namespace TGCTE.Repository.Contract
 {
-    public interface ILibraryRepository<T>
+    public interface ICteRepository
     {
-        IEnumerable<T> GetAllAuthor();
+        IEnumerable<Cte> GetAll();
+        //Cte GetById(int Id);
         // Author PostAuthor(Author author);
         //Author UpdateAuthor(Author author);
         //int DeleteAuthor(Guid authorId);
-        //Author GetAuthor(Guid authorId);
-
     }
 }

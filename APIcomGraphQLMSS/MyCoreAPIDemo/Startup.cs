@@ -38,7 +38,7 @@ namespace MyCoreAPIDemo
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<LibraryContext>(op => op.UseSqlServer(Configuration["ConnectionString:BookStoreDB"]));
-            services.AddScoped<ILibraryRepository<Users>, LibraryRepository>();
+            services.AddScoped<IUsersRepository<Users>, UsersRepository>();
 
             services.AddScoped<IDependencyResolver>(s => new FuncDependencyResolver(s.GetRequiredService));
             services.AddScoped<AppScheme>();

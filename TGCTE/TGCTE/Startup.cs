@@ -26,7 +26,7 @@ namespace TGCTE
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<BaseContext>(op => op.UseSqlServer(Configuration["ConnectionString:TGDB"]));
+            services.AddDbContext<BaseContext>(op => op.UseSqlServer(Configuration["ConnectionString:TGDBL"]));
             services.AddScoped<ICteRepository, CteRepository>();
 
 

@@ -18,6 +18,6 @@ export class CteComponent {
 interface Cte {
   codigo: number;
   numeroCte: string;
-  //ICMS: string;
-  //DataEnvio: string;
+  icms: string;
+  dataEnvio: string;
 }

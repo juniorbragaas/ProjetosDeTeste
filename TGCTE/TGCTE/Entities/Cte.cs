@@ -13,7 +13,7 @@ namespace TGCTE.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int codigo { get; set; }
         public string numeroCte { get; set; }
-        public Decimal ICMS { get; set; }
-        public DateTime DataEnvio { get; set; }
+        public Decimal icms { get; set; }
+        public DateTime dataEnvio { get; set; }
     }
 }

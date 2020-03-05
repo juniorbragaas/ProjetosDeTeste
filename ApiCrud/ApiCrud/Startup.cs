@@ -28,7 +28,7 @@ namespace ApiCrud
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = @"Data Source=DESKTOP-72FLPN6\SQLEXPRESS;Initial Catalog=API;Persist Security Info=True;User ID=sa;Password=admin123";
+            var connection = @"Data Source=SMBH-020815\\SQLEXPRESS;Initial Catalog=testes;Persist Security Info=True;User ID=sa;Password=Sysmap*2020";
             services.AddDbContext<APIContext>(options => options.UseSqlServer(connection));
 
             services.AddScoped<IUsersRepository, UsersRepository>();

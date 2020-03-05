@@ -7,7 +7,7 @@
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
             </button>
-            <a class='navbar-brand' [routerLink]='["/"]'>TMS Senior</a>
+            <a class='navbar-brand' [routerLink]='["/"]'>TG-Envios</a>
         </div>
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
@@ -17,21 +17,28 @@
                 <span class='glyphicon glyphicon-home'></span> Home
               </a>
             </li>
-            <!--<li [routerLinkActive]='["link-active"]'>
-      <a [routerLink]='["/counter"]' (click)='collapse()'>
-          <span class='glyphicon glyphicon-education'></span> Counter
-      </a>
-  </li>-->
-            <li [routerLinkActive]='["link-active"]'>
-              <a [routerLink]='["/fetch-data"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-th-list'></span> Fetch-Data
-              </a>
-            </li>
+
             <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/cte"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-th-list'></span> CTE
+                <span class='glyphicon glyphicon-th-list'></span> Envio CT-e(s)
               </a>
             </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/ocorrencia"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span> Envio Ocorrências
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/preFatura"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span> Envio Pré Faturas
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/historico"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span> Histórico de Envios
+              </a>
+            </li>
+
           </ul>
         </div>
     </div>

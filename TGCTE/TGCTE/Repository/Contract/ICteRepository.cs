@@ -8,7 +8,8 @@ namespace TGCTE.Repository.Contract
 {
     public interface ICteRepository
     {
-        IEnumerable<Cte> GetAll();
+        List<Cte> GetAll();
+        List<Cte> BuscarPorData(string dataInicial,string dataFinal);
         //Cte GetById(int Id);
         // Author PostAuthor(Author author);
         //Author UpdateAuthor(Author author);

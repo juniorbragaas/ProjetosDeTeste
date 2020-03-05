@@ -10,7 +10,7 @@ namespace TGCTE.Repository.Contract
     {
         IEnumerable<Historico> GetAll();
         IEnumerable<Historico> BuscarPorData(string dataInicial,string dataFinal);
-        //Cte GetById(int Id);
+        Task<int> Add(Historico model);
         // Author PostAuthor(Author author);
         //Author UpdateAuthor(Author author);
         //int DeleteAuthor(Guid authorId);

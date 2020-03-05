@@ -10,6 +10,11 @@ using TGCTE.Entities;
 using TGCTE.Repository.Implementation;
 using TGCTE.Repository.Contract;
 using Microsoft.EntityFrameworkCore;
+using TGUsuarios.Repository.Implementation;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.Extensions.PlatformAbstractions;
+using System.IO;
 
 namespace TGCTE
 {
@@ -26,9 +31,33 @@ namespace TGCTE
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<BaseContext>(op => op.UseSqlServer(Configuration["ConnectionString:TGDBL"]));
-            services.AddScoped<ICteRepository, CteRepository>();
+            services.AddDbContext<BaseContext>(op => op.UseSqlServer(Configuration["ConnectionString:TGDB"]));
 
+            /*Registrando Repositorios do sistema*/
+
+            services.AddScoped<ICteRepository, CteRepository>();
+            services.AddScoped<IHistoricoRepository, HistoricoRepository>();
+            services.AddScoped<IUsuariosRepository, UsuariosRepository>();
+            services.AddScoped<ILoginRepository, LoginRepository>();
+
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new Info 
+                { 
+                    Title = "TG-Envios API", 
+                    Version = "V1",
+                    Description = "Actions do sistemas de Envios",
+                    TermsOfService = "Nenhum",
+                    Contact =  new Contact{  Name= "Teste", Email="Teste@email.com", Url="wwww.teste.com" }
+                });
+                string caminhoAplicacao =
+                    PlatformServices.Default.Application.ApplicationBasePath;
+                string nomeAplicacao =
+                    PlatformServices.Default.Application.ApplicationName;
+                string caminhoXmlDoc =
+                    Path.Combine(caminhoAplicacao, $"{nomeAplicacao}.xml");
+
+                c.IncludeXmlComments(caminhoXmlDoc);
+            });
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -40,6 +69,10 @@ namespace TGCTE
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "post API V1");
+            });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

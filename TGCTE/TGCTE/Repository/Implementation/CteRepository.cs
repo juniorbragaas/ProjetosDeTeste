@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,102 +11,72 @@ namespace TGCTE.Repository.Implementation
 {
     public class CteRepository : ICteRepository
     {
-        readonly BaseContext _libraryContext;
+        readonly BaseContext db;
 
-        public CteRepository(BaseContext context)
+        public CteRepository(BaseContext _db)
         {
-            _libraryContext = context;
+            db = _db;
         }
 
-        public IEnumerable<Cte> GetAll()
+        public  List<Cte> GetAll()
         {
-            return _libraryContext.Cte.ToList();
+            if (db != null)
+            {
+                return  db.Cte.ToList(); ;
+            }
+
+            return null;
+        }
+        public List<Cte> BuscarPorData(string dataInicial, string dataFinal)
+        {
+            if (db != null)
+            {
+                return db.Cte.Where(e => e.dataEnvio >= Convert.ToDateTime(dataInicial) && e.dataEnvio <= Convert.ToDateTime(dataFinal)).ToList(); 
+            }
+
+            return null;
         }
 
-        //public Cte GetById(int Id)
+        //public async Task<int> Delete(int? Id)
         //{
-        //    try
+        //    int result = 0;
+
+        //    if (db != null)
         //    {
-        //        return _libraryContext.Users.Where(e => e.Id == Id).FirstOrDefault();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //log exception
-        //        return null;
-        //    }
-        //}
-        //public Author PostAuthor(Author author)
-        //{
-        //    try
-        //    {
-        //        if(_libraryContext!=null)
+        //        //Find the post for specific post id
+        //        var user = await db.Users.FirstOrDefaultAsync(x => x.Id == Id);
+
+        //        if (user != null)
         //        {
-        //            _libraryContext.Add(author);
-        //            _libraryContext.SaveChanges();
-        //            return author;
+        //            //Delete that post
+        //            db.Users.Remove(user);
+
+        //            //Commit the transaction
+        //            result = await db.SaveChangesAsync();
         //        }
-        //        else
-        //        {
-        //            return null;
-        //        }
+        //        return result;
         //    }
-        //    catch(Exception ex)
-        //    {
-        //        //log exception
-        //        return null;
-        //    }
+
+        //    return result;
         //}
 
-        //public Author UpdateAuthor(Author author)
+        //public async Task<Users> GetById(int? Id)
         //{
-        //    try
+        //    if (db != null)
         //    {
-        //        if (_libraryContext != null)
-        //        {
-        //            _libraryContext.Update(author);
-        //            _libraryContext.SaveChanges();
-        //            return author;
-        //        }
-        //        else
-        //        {
-        //            return null;
-        //        }
+        //        return await db.Users.SingleOrDefaultAsync(m => m.Id == Id);
         //    }
-        //    catch (Exception ex)
-        //    {
-        //        //log exception
-        //        return null;
-        //    }
+
+        //    return null;
         //}
 
-        //public int DeleteAuthor(Guid authorId)
+        //public async Task Update(Users user)
         //{
-        //    try
+        //    if (db != null)
         //    {
-        //        if (_libraryContext != null)
-        //        {
-        //            var author = _libraryContext.Authors.FirstOrDefault(x => x.AuthorId== authorId);
-        //            if(author!=null)
-        //            {
-        //                _libraryContext.Remove(author);
-        //                return 1;
-        //            }
-        //            else
-        //            {
-        //                return 0;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            return 0;
-        //        }
-
-
+        //        db.Users.Update(user);
+        //        await db.SaveChangesAsync();
         //    }
-        //    catch(Exception ex)
-        //    {
-        //        //log exception
-        //        return 0;
-        //    }
+        //}
     }
 }

@@ -7013,23 +7013,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Junior\\.nuget\\packages\\": {},
+    "C:\\Users\\valdelei.braga\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositorios\\ProjetosDeTeste\\ApiCrud\\ApiCrud\\ApiCrud.csproj",
+      "projectUniqueName": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\ApiCrud\\ApiCrud\\ApiCrud.csproj",
       "projectName": "ApiCrud",
-      "projectPath": "D:\\Repositorios\\ProjetosDeTeste\\ApiCrud\\ApiCrud\\ApiCrud.csproj",
-      "packagesPath": "C:\\Users\\Junior\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositorios\\ProjetosDeTeste\\ApiCrud\\ApiCrud\\obj\\",
+      "projectPath": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\ApiCrud\\ApiCrud\\ApiCrud.csproj",
+      "packagesPath": "C:\\Users\\valdelei.braga\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\ApiCrud\\ApiCrud\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\valdelei.braga\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -7091,6 +7091,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.0.1, 3.0.1]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.0.2, 3.0.2]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7099,7 +7117,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   },

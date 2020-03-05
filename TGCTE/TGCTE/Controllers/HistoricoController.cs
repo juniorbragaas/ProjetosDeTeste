@@ -36,6 +36,35 @@ namespace TGCTE.Controllers
             return Ok(ctes);
         }
 
+        [HttpPost]
+        [Route("Adicionar")]
+        public async Task<object> AddPost([FromBody]Historico model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var postId = await _HistoricoRepository.Add(model);
+                    if (postId > 0)
+                    {
+                        return new Response { Status = "Success", Message = "SuccessFully Saved." };
+                    }
+                    else
+                    {
+                        return new Response { Status = "Error", Message = "Invalid Data." };
+                    }
+                }
+                catch (Exception)
+                {
+
+                    return BadRequest();
+                }
+
+            }
+
+            return BadRequest();
+        }
+
 
 
 

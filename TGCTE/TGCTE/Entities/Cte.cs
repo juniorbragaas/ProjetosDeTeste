@@ -15,5 +15,6 @@ namespace TGCTE.Entities
         public string numeroCte { get; set; }
         public Decimal icms { get; set; }
         public DateTime dataEnvio { get; set; }
+        public string status { get; set; }
     }
 }

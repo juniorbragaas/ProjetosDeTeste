@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TGCTE.Entities;
@@ -21,11 +20,18 @@ namespace TGCTE.Controllers
             _CteRepository = CteRepository;
         }
 
-        // GET: api/Libraries/GetAll
+        // GET: api/Ctes
         [HttpGet]
         public IActionResult GetAll()
         {
-            IEnumerable<Cte> ctes = _CteRepository.GetAll();
+            var ctes = _CteRepository.GetAll();
+            return Ok(ctes);
+        }
+        // GET: api/Ctes/BuscarIntervaloData?datainicial=04/03/2020&&datafinal=04/03/2020
+        [HttpGet("BuscarIntervaloData")]
+        public IActionResult BuscarPorData(string datainicial,string datafinal)
+        {
+            var ctes = _CteRepository.BuscarPorData(datainicial,datafinal);
             return Ok(ctes);
         }
 

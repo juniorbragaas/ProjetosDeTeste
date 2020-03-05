@@ -10,30 +10,43 @@ namespace TGCTE.Repository.Implementation
 {
     public class HistoricoRepository : IHistoricoRepository
     {
-        readonly BaseContext _libraryContext;
+        readonly BaseContext _db;
 
         public HistoricoRepository(BaseContext context)
         {
-            _libraryContext = context;
+            _db = context;
         }
 
        
 
         public IEnumerable<Historico> GetAll()
         {
-            return _libraryContext.Historico.ToList();
+            return _db.Historico.ToList();
         }
         public IEnumerable<Historico> BuscarPorData(string dataInicial, string dataFinal)
         {
-            var historico = _libraryContext.Historico.Where(e => e.dataTarefa >= Convert.ToDateTime(dataInicial) && e.dataTarefa <= Convert.ToDateTime(dataFinal)).ToList();
+            var historico = _db.Historico.Where(e => e.dataTarefa >= Convert.ToDateTime(dataInicial) && e.dataTarefa <= Convert.ToDateTime(dataFinal)).ToList();
             return historico;
+        }
+        public async Task<int> Add(Historico model)
+        {
+            if (_db != null)
+            {
+                //model.UserId = null;
+                await _db.Historico.AddAsync(model);
+                var t = await _db.SaveChangesAsync();
+
+                return model.codigo;
+            }
+
+            return 0;
         }
 
         //public Cte GetById(int Id)
         //{
         //    try
         //    {
-        //        return _libraryContext.Users.Where(e => e.Id == Id).FirstOrDefault();
+        //        return _db.Users.Where(e => e.Id == Id).FirstOrDefault();
         //    }
         //    catch (Exception ex)
         //    {
@@ -45,10 +58,10 @@ namespace TGCTE.Repository.Implementation
         //{
         //    try
         //    {
-        //        if(_libraryContext!=null)
+        //        if(_db!=null)
         //        {
-        //            _libraryContext.Add(author);
-        //            _libraryContext.SaveChanges();
+        //            _db.Add(author);
+        //            _db.SaveChanges();
         //            return author;
         //        }
         //        else
@@ -67,10 +80,10 @@ namespace TGCTE.Repository.Implementation
         //{
         //    try
         //    {
-        //        if (_libraryContext != null)
+        //        if (_db != null)
         //        {
-        //            _libraryContext.Update(author);
-        //            _libraryContext.SaveChanges();
+        //            _db.Update(author);
+        //            _db.SaveChanges();
         //            return author;
         //        }
         //        else
@@ -89,12 +102,12 @@ namespace TGCTE.Repository.Implementation
         //{
         //    try
         //    {
-        //        if (_libraryContext != null)
+        //        if (_db != null)
         //        {
-        //            var author = _libraryContext.Authors.FirstOrDefault(x => x.AuthorId== authorId);
+        //            var author = _db.Authors.FirstOrDefault(x => x.AuthorId== authorId);
         //            if(author!=null)
         //            {
-        //                _libraryContext.Remove(author);
+        //                _db.Remove(author);
         //                return 1;
         //            }
         //            else

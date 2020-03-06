@@ -31,7 +31,6 @@ export class CteComponent {
 interface Cte {
   codigo: number;
   numeroCte: string;
-  icms: string;
   dataEnvio: string;
   status: string;
 }

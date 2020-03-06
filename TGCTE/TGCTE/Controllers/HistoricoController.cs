@@ -22,13 +22,21 @@ namespace TGCTE.Controllers
         }
 
         // GET: api/Historico
+        /// <summary>
+        /// Lista Historico de processos .
+        /// </summary>
         [HttpGet]
         public IActionResult GetAll()
         {
             IEnumerable<Historico> historico = _HistoricoRepository.GetAll();
             return Ok(historico);
         }
+
+
         // GET: api/Historico/BuscarIntervaloData?datainicial=04/03/2020&&datafinal=04/03/2020
+        /// <summary>
+        /// Procura lista de processos em um intervalo de Datas .
+        /// </summary>
         [HttpGet("BuscarIntervaloData")]
         public IActionResult BuscarPorData(string datainicial,string datafinal)
         {
@@ -36,6 +44,10 @@ namespace TGCTE.Controllers
             return Ok(ctes);
         }
 
+        ///POST /api/Historico/Adicionar
+        /// <summary>
+        /// Adiciona um item de historico.
+        /// </summary>
         [HttpPost]
         [Route("Adicionar")]
         public async Task<object> AddPost([FromBody]Historico model)

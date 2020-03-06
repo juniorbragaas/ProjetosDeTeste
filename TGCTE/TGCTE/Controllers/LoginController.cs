@@ -19,7 +19,10 @@ namespace TGUsuarios.Controllers
             _loginRepository = loginRepository;
         }
 
-
+        ///POST /api/Usuarios/Autenticar
+        /// <summary>
+        /// Login(Procura usuário por nome e senha).
+        /// </summary>
         [HttpPost]
         [Route("Autenticar")]
         public async Task<object> Autenticar([FromBody]Login model)

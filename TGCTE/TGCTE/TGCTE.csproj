@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\valdelei.braga\Desktop\TGCTE\TGCTE\TGCTE.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\valdelei.braga\source\repos\TGCTE\TGCTE\TGCTE.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

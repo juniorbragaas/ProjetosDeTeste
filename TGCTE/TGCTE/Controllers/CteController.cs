@@ -20,7 +20,10 @@ namespace TGCTE.Controllers
             _CteRepository = CteRepository;
         }
 
-        // GET: api/Ctes
+        // GET api/Ctes
+        /// <summary>
+        /// Lista Ctes cadastrados .
+        /// </summary>
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -28,6 +31,9 @@ namespace TGCTE.Controllers
             return Ok(ctes);
         }
         // GET: api/Ctes/BuscarIntervaloData?datainicial=04/03/2020&&datafinal=04/03/2020
+        /// <summary>
+        /// Procura lista Ctes cadastrados entre um intervalo entre datas .
+        /// </summary>
         [HttpGet("BuscarIntervaloData")]
         public IActionResult BuscarPorData(string datainicial,string datafinal)
         {

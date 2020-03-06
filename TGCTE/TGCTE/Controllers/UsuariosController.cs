@@ -6,6 +6,7 @@ using TGCTE.Repository.Contract;
 
 namespace TGUsuarios.Controllers
 {
+
     [Route("api/Usuarios")]
     [ApiController]
     public class UsuariosController : ControllerBase
@@ -20,6 +21,9 @@ namespace TGUsuarios.Controllers
         }
 
         // GET: api/Usuarios
+        /// <summary>
+        /// Lista usuários Cadastrados.
+        /// </summary>
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -27,6 +31,10 @@ namespace TGUsuarios.Controllers
             return Ok(Usuarios);
         }
 
+        /// POST: /api/Usuarios/Adicionar
+        /// <summary>
+        /// Adiciona um novo usuário.
+        /// </summary>
         [HttpPost]
         [Route("Adicionar")]
         public async Task<object> AddPost([FromBody]Usuarios model)
@@ -56,6 +64,10 @@ namespace TGUsuarios.Controllers
             return BadRequest();
         }
 
+        /// POST: /api/Usuarios/{id}
+        /// <summary>
+        /// Procura usuario pelo seu Id.
+        /// </summary>
         [HttpGet("{Id}")]
         public async Task<IActionResult> GetById(int Id)
         {
@@ -81,6 +93,10 @@ namespace TGUsuarios.Controllers
             }
         }
 
+        /// DELETE: /api/Usuarios/Delete/{(id)}
+        /// <summary>
+        /// Apaga um usuario com a Id escolhida.
+        /// </summary>
         [HttpDelete]
         [Route("Delete")]
         public async Task<IActionResult> Delete(int? Id)
@@ -107,7 +123,10 @@ namespace TGUsuarios.Controllers
                 return BadRequest();
             }
         }
-
+        /// PUT: /api/Usuarios/Update
+        /// <summary>
+        /// Atualiza dados de um usuário.
+        /// </summary>
         [HttpPut]
         [Route("Update")]
         public async Task<IActionResult> UpdatePost([FromBody]Usuarios model)

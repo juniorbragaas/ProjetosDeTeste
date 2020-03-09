@@ -11,10 +11,10 @@ namespace TGCTE.Entities
         {
 
         }
-
         public DbSet<Cte> Cte{ get; set; }
         public DbSet<Historico> Historico { get; set; }
-
         public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Fatura> Fatura { get; set; }
+        public DbSet<Ocorrencia> Ocorrencia { get; set; }
     }
 }

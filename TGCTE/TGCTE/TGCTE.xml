@@ -11,7 +11,17 @@
         </member>
         <member name="M:TGCTE.Controllers.CteController.BuscarPorData(System.String,System.String)">
             <summary>
-            Procura lista Ctes cadastrados entre um intervalo entre datas .
+            Procura lista Ctes cadastrados entre um intervalo entre datas de envio .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.FaturaController.GetAll">
+            <summary>
+            Lista Faturas cadastrados .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.FaturaController.BuscarPorData(System.String,System.String)">
+            <summary>
+            Procura lista Faturas cadastrados entre um intervalo entre datas de envio.
             </summary>
         </member>
         <member name="M:TGCTE.Controllers.HistoricoController.GetAll">
@@ -30,7 +40,17 @@
              Adiciona um item de historico.
              </summary>
         </member>
-        <member name="M:TGUsuarios.Controllers.LoginController.Autenticar(TGCTE.Entities.Login)">
+        <member name="M:TGCTE.Controllers.OcorrenciaController.GetAll">
+            <summary>
+            Lista Ocorrencias cadastrados .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.OcorrenciaController.BuscarPorData(System.String,System.String)">
+            <summary>
+            Procura lista Ocorrencias cadastrados entre um intervalo entre datas de envio.
+            </summary>
+        </member>
+        <member name="M:TGUsuarios.Controllers.LoginController.Autenticar(TGCTE.Models.Login)">
             POST /api/Usuarios/Autenticar
              <summary>
              Login(Procura usuário por nome e senha).

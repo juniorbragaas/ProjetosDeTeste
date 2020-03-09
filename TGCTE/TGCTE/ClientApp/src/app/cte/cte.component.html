@@ -5,16 +5,17 @@
 <p *ngIf="!ctes"><em>Loading...</em></p>
 <div class='row'>
   <div class='col-sm-12'>
-    <table><tr><td>Selecione Intervalo:<input id="Text1" type="date" /> Até <input id="Text1" type="date" /><input id="btBusca" type="button" value="Buscar" /></td></tr></table>
+    <table><tr><td>Selecione Intervalo:<input id="Text1" type="date" value="{{dataInicio}}" /> Até <input id="Text1" type="date" value="{{dataFim}}" /><input id="btBusca" type="button" value="Buscar" /></td></tr></table>
   </div>
 </div>
 
-<table id="table" class="table table-hover" *ngIf="ctes">
+<table class="table table-hover" *ngIf="ctes" datatable >
   <thead>
     <tr>
       <th>Selecionar</th>
       <th>Codigo</th>
       <th>Nº Cte</th>
+      <th>Tentativas</th>
       <th>Data de Envio</th>
       <th>Processamento</th>
 
@@ -25,6 +26,7 @@
       <td><input id="chk" type="checkbox" /></td>
       <td>{{ cte.codigo }}</td>
       <td>{{ cte.numeroCte }}</td>
+      <td>{{ cte.numeroTentativasEnvio }}</td>
       <td>{{ cte.dataEnvio }}</td>
       <td>{{ cte.status}}</td>
     </tr>
@@ -32,7 +34,7 @@
 </table>
 <div class='row'>
   <div class='col-sm-12'>
-    <table><tr><td><input id="btBusca" type="button" value="Processar novamente" /></td></tr></table>
+    <table><tr><td><input id="btProcessar" type="button" value="Processar novamente" /></td><td><input id="btExportar" type="button" value="Exportar" /></td></tr></table>
   </div>
 </div>
 <img src="assets/grafico.jpg">

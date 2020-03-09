@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TGCTE.Entities;
+using TGCTE.Models;
 using TGCTE.Repository.Contract;
 
 namespace TGUsuarios.Controllers

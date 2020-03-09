@@ -11,10 +11,10 @@ using TGCTE.Repository.Implementation;
 using TGCTE.Repository.Contract;
 using Microsoft.EntityFrameworkCore;
 using TGUsuarios.Repository.Implementation;
-using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.Extensions.PlatformAbstractions;
 using System.IO;
+using TGTCE.Repository.Implementation;
 
 namespace TGCTE
 {
@@ -39,6 +39,8 @@ namespace TGCTE
             services.AddScoped<IHistoricoRepository, HistoricoRepository>();
             services.AddScoped<IUsuariosRepository, UsuariosRepository>();
             services.AddScoped<ILoginRepository, LoginRepository>();
+            services.AddScoped<IFaturaRepository, FaturaRepository>();
+            services.AddScoped<IOcorrenciaRepository, OcorrenciaRepository>();
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new Info 

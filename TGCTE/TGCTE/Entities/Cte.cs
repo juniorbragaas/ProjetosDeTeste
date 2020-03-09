@@ -15,6 +15,8 @@ namespace TGCTE.Entities
         public string numeroCte { get; set; }
         public DateTime? dataEnvio { get; set; }
         public string status { get; set; }
+        public DateTime? dataImportacao { get; set; }
+        public int? numeroTentativasEnvio { get; set; }
         public string NumeroTransporte { get; set; }
         public string codTranspMatriz { get; set; }
         public string codTranspFilial { get; set; }

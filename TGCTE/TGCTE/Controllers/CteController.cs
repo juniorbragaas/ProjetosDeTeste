@@ -7,7 +7,7 @@ using TGCTE.Repository.Contract;
 
 namespace TGCTE.Controllers
 {
-    [Route("api/Ctes")]
+    [Route("api/Cte")]
     [ApiController]
     public class CteController : ControllerBase
     {
@@ -32,7 +32,7 @@ namespace TGCTE.Controllers
         }
         // GET: api/Ctes/BuscarIntervaloData?datainicial=04/03/2020&&datafinal=04/03/2020
         /// <summary>
-        /// Procura lista Ctes cadastrados entre um intervalo entre datas .
+        /// Procura lista Ctes cadastrados entre um intervalo entre datas de envio .
         /// </summary>
         [HttpGet("BuscarIntervaloData")]
         public IActionResult BuscarPorData(string datainicial,string datafinal)

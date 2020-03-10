@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\valdelei.braga\\source\\repos\\ProcessoImportacao\\ProcessoImportacao\\ProcessoImportacao.csproj": {}
+    "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\ProcessoImportacao\\ProcessoImportacao\\ProcessoImportacao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\valdelei.braga\\source\\repos\\ProcessoImportacao\\ProcessoImportacao\\ProcessoImportacao.csproj": {
+    "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\ProcessoImportacao\\ProcessoImportacao\\ProcessoImportacao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\valdelei.braga\\source\\repos\\ProcessoImportacao\\ProcessoImportacao\\ProcessoImportacao.csproj",
+        "projectUniqueName": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\ProcessoImportacao\\ProcessoImportacao\\ProcessoImportacao.csproj",
         "projectName": "ProcessoImportacao",
-        "projectPath": "C:\\Users\\valdelei.braga\\source\\repos\\ProcessoImportacao\\ProcessoImportacao\\ProcessoImportacao.csproj",
+        "projectPath": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\ProcessoImportacao\\ProcessoImportacao\\ProcessoImportacao.csproj",
         "packagesPath": "C:\\Users\\valdelei.braga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\valdelei.braga\\source\\repos\\ProcessoImportacao\\ProcessoImportacao\\obj\\",
+        "outputPath": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\ProcessoImportacao\\ProcessoImportacao\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -45,6 +45,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.6.0, )"
+            },
+            "System.Runtime": {
+              "target": "Package",
+              "version": "[4.3.1, )"
             }
           },
           "imports": [

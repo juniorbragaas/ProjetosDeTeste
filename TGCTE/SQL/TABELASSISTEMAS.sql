@@ -1,4 +1,6 @@
+
 CREATE TABLE [dbo].[temp_Cte] (
+    [chaveRegistro]    VARCHAR (255)   NULL,
     [numeroCte]        VARCHAR (50)    NOT NULL,
     [NumeroTransporte] VARCHAR (50)    NULL,
     [codTranspMatriz]  VARCHAR (50)    NULL,
@@ -16,9 +18,37 @@ CREATE TABLE [dbo].[temp_Cte] (
     [chaveCTE]         VARCHAR (50)    NULL,
     [xmlCte]           TEXT            NULL,
     [chaveNfe]         VARCHAR (50)    NULL,
-    [DtEmissaoNf]      DATE            NULL
+    [DtEmissaoNf]      DATE            NULL   
 );
 
+
+CREATE TABLE [dbo].[Cte] (
+    [codigo]                INT             IDENTITY (1, 1) NOT NULL,
+	[chaveRegistro]         VARCHAR (255)   NULL,
+	[dataImportacao]        DATETIME        NULL,
+	[numeroTentativasEnvio] INT             NULL,
+	[status]                VARCHAR (255)   NULL,
+	[dataEnvio]             DATETIME        NULL,
+    [numeroCte]             VARCHAR (50)    NOT NULL,
+    [NumeroTransporte]      VARCHAR (50)    NULL,
+    [codTranspMatriz]       VARCHAR (50)    NULL,
+    [codTranspFilial]       VARCHAR (50)    NULL,
+    [cnpjEmitente]          VARCHAR (50)    NULL,
+    [cnpjTomador]           VARCHAR (50)    NULL,
+    [serieCte]              INT             NULL,
+    [modeloCte]             INT             NULL,
+    [dtEmissaoCte]          DATE            NULL,
+    [cdIbgeOrigem]          VARCHAR (10)    NULL,
+    [cdIbgeDestino]         VARCHAR (10)    NULL,
+    [tipoDoc]               VARCHAR (1)     NULL,
+    [valorFrete]            DECIMAL (15, 3) NULL,
+    [valorImposto]          DECIMAL (15, 3) NULL,
+    [chaveCTE]              VARCHAR (50)    NULL,
+    [xmlCte]                TEXT            NULL,
+    [chaveNfe]              VARCHAR (50)    NULL,
+    [DtEmissaoNf]           DATE            NULL,
+    PRIMARY KEY CLUSTERED ([codigo] ASC)
+);
 
 
 CREATE TABLE [dbo].[Ocorrencia] (
@@ -99,35 +129,6 @@ CREATE TABLE [dbo].[Fatura] (
 	chaveNFeCTe VARCHAR (50)    NULL,
     PRIMARY KEY CLUSTERED ([codigo] ASC)
 );
-
-
-
-CREATE TABLE [dbo].[Cte] (
-    [codigo]                INT             IDENTITY (1, 1) NOT NULL,
-    [numeroCte]             VARCHAR (50)    NOT NULL,
-    [dataEnvio]             DATETIME        NULL,
-    [status]                VARCHAR (255)   NULL,
-    [NumeroTransporte]      VARCHAR (50)    NULL,
-    [codTranspMatriz]       VARCHAR (50)    NULL,
-    [codTranspFilial]       VARCHAR (50)    NULL,
-    [cnpjEmitente]          VARCHAR (50)    NULL,
-    [cnpjTomador]           VARCHAR (50)    NULL,
-    [serieCte]              INT             NULL,
-    [modeloCte]             INT             NULL,
-    [dtEmissaoCte]          DATE            NULL,
-    [cdIbgeOrigem]          VARCHAR (10)    NULL,
-    [cdIbgeDestino]         VARCHAR (10)    NULL,
-    [tipoDoc]               VARCHAR (1)     NULL,
-    [valorFrete]            DECIMAL (15, 3) NULL,
-    [valorImposto]          DECIMAL (15, 3) NULL,
-    [chaveCTE]              VARCHAR (50)    NULL,
-    [xmlCte]                TEXT            NULL,
-    [chaveNfe]              VARCHAR (50)    NULL,
-    [DtEmissaoNf]           DATE            NULL,
-    [numeroTentativasEnvio] INT             NULL,
-    [dataImportacao]        DATETIME        NULL,
-    PRIMARY KEY CLUSTERED ([codigo] ASC)
-	}
 
 CREATE TABLE [dbo].[Historico] (
     [codigo]         INT           IDENTITY (1, 1) NOT NULL,

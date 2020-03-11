@@ -20,7 +20,7 @@ namespace ProcessoImportacao
             try
             {
                
-                Console.WriteLine("Processo de Importação de Tabela");
+                Console.WriteLine("Processo de Importação de Tabela Cte");
                 Console.WriteLine("-------------------------------------------------------------------------------------------------");
                 Console.WriteLine("-------------------------------------------------------------------------------------------------");
                 /* Primeiro Passo Apagar  tabela temporaria*/
@@ -87,6 +87,7 @@ namespace ProcessoImportacao
                 {
                     sb = sb.Append("INSERT INTO temp_Cte" +
                         "(" +
+                            "chaveRegistro, " +
                             "numeroCte, " +
                             "NumeroTransporte, " +
                             "codTranspMatriz," +
@@ -105,7 +106,8 @@ namespace ProcessoImportacao
                             "xmlCte, " +
                             "chaveNfe, " +
                             "DtEmissaoNf" +
-                         ") VALUES ('" + 
+                         ") VALUES ('" +
+                        element.numeroCte+"-"+ element.chaveCTE + "','" +
                         element.numeroCte+"','" + 
                         element.NumeroTransporte +"','"+
                         element.codTranspMatriz + "','" +
@@ -133,8 +135,6 @@ namespace ProcessoImportacao
                     command.Cancel();
                     sb.Clear();
                 }
-
-
                 connectionBanco.Close();
                 Console.WriteLine("* DADOS DO OBJETO INSERIDOS EM temp_Cte OK");
                 Console.WriteLine("-------------------------------------------------------------------------------------------------");
@@ -142,8 +142,100 @@ namespace ProcessoImportacao
 
                 /* Terceiro Passo Incluir Registros Novos e modificados na tabela de producao*/
                 Console.WriteLine("3- Incluir Registros Novos e modificados da tabela temporaria para tabela de producao");
-                Console.WriteLine("3.1- Incluir registros de novos-Keys da tabela temporaria que nao existem na tabela ");
-                Console.WriteLine("3.2- Update de registro que com status != OK (Sem sucesso de resposta do web service)");
+                Console.WriteLine("3.1- Update de registro que com status != OK (Sem sucesso de resposta do web service)");
+                connectionBanco.Open();
+                sql = @"
+UPDATE Cte SET 
+Cte.NumeroTransporte = t.NumeroTransporte,
+      Cte.codTranspMatriz=t.codTranspMatriz,
+      Cte.codTranspFilial=t.codTranspFilial,
+      Cte.cnpjEmitente=t.cnpjEmitente,
+      Cte.cnpjTomador=t.cnpjTomador,
+     Cte.serieCte=t.serieCte,
+      Cte.modeloCte=t.modeloCte,
+      Cte.dtEmissaoCte=t.dtEmissaoCte,
+      Cte.cdIbgeOrigem=t.cdIbgeOrigem,
+      Cte.cdIbgeDestino=t.cdIbgeDestino,
+      Cte.tipoDoc=t.tipoDoc,
+      Cte.valorFrete=t.valorFrete,
+      Cte.valorImposto=t.valorImposto,
+      Cte.chaveCTE=t.chaveCTE,
+      Cte.xmlCte=t.xmlCte,
+      Cte.chaveNfe=t.chaveNfe,
+      Cte.DtEmissaoNf=t.DtEmissaoNf,
+      Cte.dataImportacao = CURRENT_TIMESTAMP
+from Cte 
+Inner JOIN temp_Cte t On t.chaveRegistro = Cte.chaveRegistro  
+where Cte.status NOT Like 'OK';  
+";
+                command = new SqlCommand(sql, connectionBanco);
+                reader = command.ExecuteReader();
+                reader.Close();
+                command.Cancel();
+                sb.Clear();
+                connectionBanco.Close();
+                Console.WriteLine("* ATUALIZANDO REGISTROS NÃO PROCESSADOS DA TABELA Cte OK");
+                Console.WriteLine("--------------------------------------------------------------------------------------------------");
+                Console.WriteLine("3.2- Incluir registros de novos-Keys da tabela temporaria que nao existem na tabela ");
+                /* Considerando inicialmente chave = numeroCte + chaveCte */
+                connectionBanco.Open();
+                sql = @"INSERT INTO Cte 
+(
+   chaveRegistro,
+   numeroCte,
+   NumeroTransporte,
+   codTranspMatriz,
+   codTranspFilial,
+   cnpjEmitente,
+   cnpjTomador,
+   serieCte,
+   modeloCte,
+   dtEmissaoCte,
+   cdIbgeOrigem,
+   cdIbgeDestino,
+   tipoDoc,
+   valorFrete,
+   valorImposto,
+   chaveCTE,
+   xmlCte,
+   chaveNfe,
+   DtEmissaoNf,
+   dataImportacao,
+   status
+)
+SELECT 
+   chaveRegistro,
+   numeroCte,
+   NumeroTransporte,
+   codTranspMatriz,
+   codTranspFilial,
+   cnpjEmitente,
+   cnpjTomador,
+   serieCte,
+   modeloCte,
+   dtEmissaoCte,
+   cdIbgeOrigem,
+   cdIbgeDestino,
+   tipoDoc,
+   valorFrete,
+   valorImposto,
+   chaveCTE,
+   xmlCte,
+   chaveNfe,
+   DtEmissaoNf,
+   CURRENT_TIMESTAMP AS dataImportacao,
+   'Não Pocessado!'
+FROM 
+	TEMP_Cte
+wHERE chaveRegistro NOT IN (select chaveRegistro FROM Cte)
+";
+                command = new SqlCommand(sql, connectionBanco);
+                reader = command.ExecuteReader();
+                reader.Close();
+                command.Cancel();
+                sb.Clear();
+                connectionBanco.Close();
+                Console.WriteLine("* NOVOS REGISTROS INCLUIDOS NA TABELA Cte OK");
                 Console.WriteLine("-------------------------------------------------------------------------------------------------");
                 Console.WriteLine("--------------------------------------------------------------------------------------------------");
 

@@ -1697,11 +1697,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\valdelei.braga\\source\\repos\\ConsumnindoAPIConsole\\ConsumnindoAPIConsole\\ConsumnindoAPIConsole.csproj",
+      "projectUniqueName": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\ConsumnindoAPIConsole\\ConsumnindoAPIConsole\\ConsumnindoAPIConsole.csproj",
       "projectName": "ConsumnindoAPIConsole",
-      "projectPath": "C:\\Users\\valdelei.braga\\source\\repos\\ConsumnindoAPIConsole\\ConsumnindoAPIConsole\\ConsumnindoAPIConsole.csproj",
+      "projectPath": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\ConsumnindoAPIConsole\\ConsumnindoAPIConsole\\ConsumnindoAPIConsole.csproj",
       "packagesPath": "C:\\Users\\valdelei.braga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\valdelei.braga\\source\\repos\\ConsumnindoAPIConsole\\ConsumnindoAPIConsole\\obj\\",
+      "outputPath": "C:\\Users\\valdelei.braga\\Documents\\GitHub\\ProjetosDeTeste\\ConsumnindoAPIConsole\\ConsumnindoAPIConsole\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

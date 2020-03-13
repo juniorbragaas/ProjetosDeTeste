@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TGCTE</name>
+    </assembly>
+    <members>
+        <member name="M:TGCTE.Controllers.CteController.GetAll">
+            <summary>
+            Lista Ctes cadastrados .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.CteController.BuscarPorData(System.String,System.String)">
+            <summary>
+            Procura lista Ctes cadastrados entre um intervalo entre datas de envio .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.FaturaController.GetAll">
+            <summary>
+            Lista Faturas cadastrados .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.FaturaController.BuscarPorData(System.String,System.String)">
+            <summary>
+            Procura lista Faturas cadastrados entre um intervalo entre datas de envio.
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.HistoricoController.GetAll">
+            <summary>
+            Lista Historico de processos .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.HistoricoController.BuscarPorData(System.String,System.String)">
+            <summary>
+            Procura lista de processos em um intervalo de Datas .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.HistoricoController.AddPost(TGCTE.Entities.Historico)">
+            POST /api/Historico/Adicionar
+             <summary>
+             Adiciona um item de historico.
+             </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.OcorrenciaController.GetAll">
+            <summary>
+            Lista Ocorrencias cadastrados .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.OcorrenciaController.BuscarPorData(System.String,System.String)">
+            <summary>
+            Procura lista Ocorrencias cadastrados entre um intervalo entre datas de envio.
+            </summary>
+        </member>
+        <member name="M:TGUsuarios.Controllers.LoginController.Autenticar(TGCTE.Models.Login)">
+            POST /api/Usuarios/Autenticar
+             <summary>
+             Login(Procura usuário por nome e senha).
+             </summary>
+        </member>
+        <member name="M:TGUsuarios.Controllers.UsuariosController.GetAll">
+            <summary>
+            Lista usuários Cadastrados.
+            </summary>
+        </member>
+        <member name="M:TGUsuarios.Controllers.UsuariosController.AddPost(TGCTE.Entities.Usuarios)">
+            POST: /api/Usuarios/Adicionar
+            <summary>
+            Adiciona um novo usuário.
+            </summary>
+        </member>
+        <member name="M:TGUsuarios.Controllers.UsuariosController.GetById(System.Int32)">
+            POST: /api/Usuarios/{id}
+            <summary>
+            Procura usuario pelo seu Id.
+            </summary>
+        </member>
+        <member name="M:TGUsuarios.Controllers.UsuariosController.Delete(System.Nullable{System.Int32})">
+            DELETE: /api/Usuarios/Delete/{(id)}
+            <summary>
+            Apaga um usuario com a Id escolhida.
+            </summary>
+        </member>
+        <member name="M:TGUsuarios.Controllers.UsuariosController.UpdatePost(TGCTE.Entities.Usuarios)">
+            PUT: /api/Usuarios/Update
+            <summary>
+            Atualiza dados de um usuário.
+            </summary>
+        </member>
+    </members>
+</doc>

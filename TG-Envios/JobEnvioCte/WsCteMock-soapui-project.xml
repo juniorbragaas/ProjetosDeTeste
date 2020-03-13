@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8dc75fd4-8588-446e-bc42-07fc854c16b4" activeEnvironment="Default" name="WsCte" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="98b91833-20c7-4f80-9c15-f1ec0ea9142e" wsaVersion="NONE" name="SI_ProcessaCteNfse_SyncBinding" type="wsdl" bindingName="{http://www.natura.net/CteNfse}SI_ProcessaCteNfse_SyncBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/valdelei.braga/Desktop/SI_ProcessaCteNfse.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\valdelei.braga\Desktop\SI_ProcessaCteNfse.wsdl"><con:part><con:url>file:\C:\Users\valdelei.braga\Desktop\SI_ProcessaCteNfse.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SI_ProcessaCteNfse_Sync" targetNamespace="http://www.natura.net/CteNfse" xmlns:p1="http://www.natura.net/CteNfse" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation/>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="OP_SI_ProcessaCteNfse_Sync"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.natura.net/CteNfse" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.natura.net/CteNfse">
+      <xsd:element name="MT_EletronicDocumentResponse" type="DT_EletronicDocumentResponse"/>
+      <xsd:element name="MT_EletronicDocumentRequest" type="DT_EletronicDocumentRequest"/>
+      <xsd:complexType name="DT_EletronicDocumentRequest">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">25381b18710d11e6a17c00000189c4e2</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="dados">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">fd821a531b7211e5b6da54ec5bba1438</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="numeroTransporte" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">fd821a4d1b7211e5a9f954ec5bba1438</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="codTranspMatriz" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">2971b82225a811e5ce5c54ec5bba1438</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="codTranspEmit" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">811e4de62f0811e5ada7aaaaaaac9800</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="cnpjEmitente" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">fd821a4e1b7211e5ceb754ec5bba1438</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="cnpjTomador" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">fd821a4f1b7211e58e0b54ec5bba1438</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="documentoFiscal" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">fd821a521b7211e5ad7554ec5bba1438</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="numero" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">9b22a56c1b7311e586a454ec5bba1438</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="serie" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">9b22a56d1b7311e5a18154ec5bba1438</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="modelo" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">9b22a56e1b7311e5add354ec5bba1438</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="dataEmissao" type="xsd:date">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">9b22a56f1b7311e58fe854ec5bba1438</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="origem" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">9b22a5701b7311e5998254ec5bba1438</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="destino" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">9b22a5711b7311e59d8854ec5bba1438</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="tipoDoc" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">c22414432f0711e5afadaaaaaaac9800</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="valorFrete" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">9b22a5721b7311e5a11854ec5bba1438</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="valorImpostos" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">9b22a5731b7311e5902d54ec5bba1438</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="nfse" minOccurs="0">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">9b22a5741b7311e5bc4154ec5bba1438</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="retencao" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed705e771b7411e5833654ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="aliqISS" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed705e781b7411e5c06f54ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="baseISS" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed705e791b7411e5c77854ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="valorISS" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed705e7a1b7411e5c1f054ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="aliqPIS" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed705e7b1b7411e5c16254ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="basePIS" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed705e7c1b7411e5c43954ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="valorPIS" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed705e7d1b7411e5b26754ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="aliqCOFINS" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed705e7e1b7411e5c50954ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="baseCOFINS" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed72c13b1b7411e5a52a54ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="valorCOFINS" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed72c13c1b7411e594ae54ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="aliqCSLL" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed72c13d1b7411e5a67c54ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="baseCSLL" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed72c13e1b7411e5cebc54ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="valorCSLL" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed72c13f1b7411e5bbb654ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="aliqIR" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed72c1401b7411e59fe354ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="baseIR" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed72c1411b7411e5855b54ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="valorIR" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">ed72c1421b7411e5adae54ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="cte" minOccurs="0">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">f4f0e1ec1b7411e5b9fe54ec5bba1438</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="chaveCTe" type="xsd:string">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">f4f0e1d41b7411e59ec054ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="xmlCTe" type="xsd:string">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">f4f0e1d51b7411e5bfac54ec5bba1438</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="notasTransportadas" maxOccurs="unbounded">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">189e9a7c370411e5916baaaaaaac9800</xsd:appinfo>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="chaveNFe" type="xsd:string" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">189e84f6370411e5c5a6aaaaaaac9800</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="dataEmissao" type="xsd:date" minOccurs="0">
+                              <xsd:annotation>
+                                <xsd:appinfo source="http://sap.com/xi/TextID">189e84f7370411e5957caaaaaaac9800</xsd:appinfo>
+                              </xsd:annotation>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_EletronicDocumentResponse">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">174034a573cf11e6ce9e00000189c4e2</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="dados" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">c627dcf4710d11e6940f00059a3c7a00</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="type" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">3ee9c6c5708011e6833600059a3c7a00</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="id" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">a2560008708011e6bfe200059a3c7a00</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="number" type="xsd:integer">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">a2560009708011e6879600059a3c7a00</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="message" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">a256000a708011e6c1f300059a3c7a00</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MT_EletronicDocumentRequest">
+    <wsdl:documentation/>
+    <wsdl:part name="MT_EletronicDocumentRequest" element="p1:MT_EletronicDocumentRequest"/>
+  </wsdl:message>
+  <wsdl:message name="MT_EletronicDocumentResponse">
+    <wsdl:documentation/>
+    <wsdl:part name="MT_EletronicDocumentResponse" element="p1:MT_EletronicDocumentResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="SI_ProcessaCteNfse_Sync">
+    <wsdl:documentation/>
+    <wsdl:operation name="SI_ProcessaCteNfse_Sync">
+      <wsdl:documentation/>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_SI_ProcessaCteNfse_Sync"/>
+      </wsp:Policy>
+      <wsdl:input message="p1:MT_EletronicDocumentRequest"/>
+      <wsdl:output message="p1:MT_EletronicDocumentResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_ProcessaCteNfse_SyncBinding" type="p1:SI_ProcessaCteNfse_Sync">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="SI_ProcessaCteNfse_Sync">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_ProcessaCteNfse_SyncService">
+    <wsdl:port name="HTTP_Port" binding="p1:SI_ProcessaCteNfse_SyncBinding">
+      <soap:address location="http://aslx251br.natura.com.br:50200/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=TRANSPORTES&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ProcessaCteNfse_Sync&amp;interfaceNamespace=http%3A%2F%2Fwww.natura.net%2FCteNfse" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:SI_ProcessaCteNfse_SyncBinding">
+      <soap:address location="https://aslx251br.natura.com.br:50201/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=TRANSPORTES&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ProcessaCteNfse_Sync&amp;interfaceNamespace=http%3A%2F%2Fwww.natura.net%2FCteNfse" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://SMBH-020815:8088/mockSI_ProcessaCteNfse_SyncBinding</con:endpoint><con:endpoint>http://aslx251br.natura.com.br:50200/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=TRANSPORTES&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ProcessaCteNfse_Sync&amp;interfaceNamespace=http://www.natura.net/CteNfse</con:endpoint><con:endpoint>https://aslx251br.natura.com.br:50201/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=TRANSPORTES&amp;receiverParty=&amp;receiverService=&amp;interface=SI_ProcessaCteNfse_Sync&amp;interfaceNamespace=http://www.natura.net/CteNfse</con:endpoint></con:endpoints><con:operation id="ff5e7aae-da2b-48e2-be52-ea46896098b6" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="SI_ProcessaCteNfse_Sync" bindingOperationName="SI_ProcessaCteNfse_Sync" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="175ec05e-26dc-49e0-a281-899dc643d9d1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockSI_ProcessaCteNfse_SyncBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cten="http://www.natura.net/CteNfse">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cten:MT_EletronicDocumentRequest>\r
+         <dados>\r
+            <numeroTransporte>?</numeroTransporte>\r
+            <codTranspMatriz>?</codTranspMatriz>\r
+            <codTranspEmit>?</codTranspEmit>\r
+            <cnpjEmitente>?</cnpjEmitente>\r
+            <cnpjTomador>?</cnpjTomador>\r
+            <!--1 or more repetitions:-->\r
+            <documentoFiscal>\r
+               <numero>?</numero>\r
+               <serie>?</serie>\r
+               <modelo>?</modelo>\r
+               <dataEmissao>?</dataEmissao>\r
+               <origem>?</origem>\r
+               <destino>?</destino>\r
+               <tipoDoc>?</tipoDoc>\r
+               <valorFrete>?</valorFrete>\r
+               <valorImpostos>?</valorImpostos>\r
+               <!--Optional:-->\r
+               <nfse>\r
+                  <!--Optional:-->\r
+                  <retencao>?</retencao>\r
+                  <!--Optional:-->\r
+                  <aliqISS>?</aliqISS>\r
+                  <!--Optional:-->\r
+                  <baseISS>?</baseISS>\r
+                  <!--Optional:-->\r
+                  <valorISS>?</valorISS>\r
+                  <!--Optional:-->\r
+                  <aliqPIS>?</aliqPIS>\r
+                  <!--Optional:-->\r
+                  <basePIS>?</basePIS>\r
+                  <!--Optional:-->\r
+                  <valorPIS>?</valorPIS>\r
+                  <!--Optional:-->\r
+                  <aliqCOFINS>?</aliqCOFINS>\r
+                  <!--Optional:-->\r
+                  <baseCOFINS>?</baseCOFINS>\r
+                  <!--Optional:-->\r
+                  <valorCOFINS>?</valorCOFINS>\r
+                  <!--Optional:-->\r
+                  <aliqCSLL>?</aliqCSLL>\r
+                  <!--Optional:-->\r
+                  <baseCSLL>?</baseCSLL>\r
+                  <!--Optional:-->\r
+                  <valorCSLL>?</valorCSLL>\r
+                  <!--Optional:-->\r
+                  <aliqIR>?</aliqIR>\r
+                  <!--Optional:-->\r
+                  <baseIR>?</baseIR>\r
+                  <!--Optional:-->\r
+                  <valorIR>?</valorIR>\r
+               </nfse>\r
+               <!--Optional:-->\r
+               <cte>\r
+                  <chaveCTe>?</chaveCTe>\r
+                  <xmlCTe>?</xmlCTe>\r
+               </cte>\r
+               <!--1 or more repetitions:-->\r
+               <notasTransportadas>\r
+                  <!--Optional:-->\r
+                  <chaveNFe>?</chaveNFe>\r
+                  <!--Optional:-->\r
+                  <dataEmissao>?</dataEmissao>\r
+               </notasTransportadas>\r
+            </documentoFiscal>\r
+         </dados>\r
+      </cten:MT_EletronicDocumentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="0be591cf-81bb-4651-85ab-44ba0b886da2" port="8088" path="/mockSI_ProcessaCteNfse_SyncBinding" host="SMBH-020815" name="SI_ProcessaCteNfse_SyncBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="SI_ProcessaCteNfse_Sync" id="7f59fdd3-4e0c-4e0a-9eb7-fb0c70ce62a2" interface="SI_ProcessaCteNfse_SyncBinding" operation="SI_ProcessaCteNfse_Sync"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>RANDOM</con:dispatchStyle><con:response name="Response 1" id="c8c54d90-ca94-4336-b96e-d5e55959bb81" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP:Header/>
+   <SOAP:Body>
+      <nm:MT_EletronicDocumentResponse xmlns:nm="http://www.natura.net/CteNfse" xmlns:prx="urn:sap.com:proxy:DZ2:/1SAI/TAS919FB2EDDF7F296A7694:731">
+         <dados>
+            <type>S</type>
+            <id>ZAIF</id>
+            <number>100</number>
+            <message>Documento enviado com sucesso!</message>
+         </dados>
+      </nm:MT_EletronicDocumentResponse>
+   </SOAP:Body>
+</SOAP:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/></con:response><con:response name="Response 2" id="aadc29e8-6092-4da9-a2bd-d57c71118f35" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cten="http://www.natura.net/CteNfse">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cten:MT_EletronicDocumentResponse>
+         <!--1 or more repetitions:-->
+         <dados>
+            <type>F</type>
+            <id>108</id>
+            <number>68</number>
+            <message>Erro do CTe</message>
+         </dados>
+      </cten:MT_EletronicDocumentResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

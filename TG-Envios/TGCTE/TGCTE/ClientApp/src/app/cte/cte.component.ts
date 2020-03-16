@@ -32,8 +32,10 @@ export class CteComponent {
 }
 
 interface Cte {
-  codigo: number;
   numeroCte: string;
+  serieCte: number;
+  modeloCte: number;
+  dtEmissaoCte: string;
   numeroTentativasEnvio: number;
   dataEnvio: string;
   status: string;

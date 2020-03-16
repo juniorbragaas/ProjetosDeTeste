@@ -66,10 +66,10 @@ CREATE TABLE Cte (
     [chaveRegistro]         VARCHAR (255)   NULL,
     [responseWS]            VARCHAR (255)   NULL,
     [numeroTentativasEnvio] INT             CONSTRAINT [numeroTentativasEnvioDefault] DEFAULT ((0)) NULL,
+	[dataEnvio]             DATETIME        NULL,
+    [status]                VARCHAR (255)   NULL,
 -----------------------------------------------------------------------------------------------------------------	
     [numeroCte]             VARCHAR (50)    NOT NULL,
-    [dataEnvio]             DATETIME        NULL,
-    [status]                VARCHAR (255)   NULL,
     [NumeroTransporte]      VARCHAR (50)    NULL,
     [codTranspMatriz]       VARCHAR (50)    NULL,
     [codTranspFilial]       VARCHAR (50)    NULL,

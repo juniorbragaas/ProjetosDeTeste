@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace TGCTE.Entities
+namespace ProcessoImportacao
 {
-    public class Fatura
+    class Fatura
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int codigo { get; set; }
         public DateTime? dataEnvio { get; set; }
         public string status { get; set; }
@@ -21,8 +16,8 @@ namespace TGCTE.Entities
         public string numeroFatura { get; set; }
         public DateTime? dataVencFatura { get; set; }
         public DateTime? dataFatura { get; set; }
-        public string codTranspMatriz { get; set; }
-        public string codTranspEmit { get; set; }
+        public DateTime? codTranspMatriz { get; set; }
+        public DateTime? codTranspEmit { get; set; }
         public int modeloDocFiscal { get; set; }
         public int numeroDocFiscal { get; set; }
         public int serieDocFiscal { get; set; }
@@ -52,5 +47,4 @@ namespace TGCTE.Entities
         public DateTime? dataEmissao { get; set; }
         public string chaveNFeCTe { get; set; }
     }
-
 }

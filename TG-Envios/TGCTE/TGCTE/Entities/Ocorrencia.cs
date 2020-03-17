@@ -12,10 +12,12 @@ namespace TGCTE.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int codigo { get; set; }
+        public DateTime? dataImportacao { get; set; }
+        public string chaveRegistro { get; set; }
+        public string responseWS { get; set; }
+        public int? numeroTentativasEnvio { get; set; }
         public DateTime? dataEnvio { get; set; }
         public string status { get; set; }
-        public DateTime? dataImportacao { get; set; }
-        public int? numeroTentativasEnvio { get; set; }
         public string orderNumber { get; set; }
         public string carrierCode { get; set; }
         public string sellerId { get; set; }
@@ -24,7 +26,7 @@ namespace TGCTE.Entities
         public string driverName { get; set; }
         public string driverPhone { get; set; }
         public string extraInfo { get; set; }
-        public string eventDateTime { get; set; }
+        public DateTime? eventDateTime { get; set; }
         public string trackingSource { get; set; }
         public string eventType { get; set; }
         public string recipientName { get; set; }
@@ -33,8 +35,8 @@ namespace TGCTE.Entities
         public string invoiceNumber { get; set; }
         public string invoiceSerialNumber { get; set; }
         public string invoiceControlNumber { get; set; }
-        public int isDeliveryAddressFound { get; set; }
-        public int isBestPhoneUsed { get; set; }
+        public int? isDeliveryAddressFound { get; set; }
+        public int? isBestPhoneUsed { get; set; }
         public string latitude { get; set; }
         public string longitude { get; set; }
         public DateTime? media { get; set; }

@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    ".NETCoreApp,Version=v3.0": {
       "Microsoft.NETCore.Platforms/2.0.0": {
         "type": "package",
         "compile": {
@@ -648,41 +648,41 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
+    ".NETCoreApp,Version=v3.0": [
       "System.Data.SqlClient >= 4.6.0",
       "System.Runtime >= 4.3.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\valdelei.braga\\.nuget\\packages\\": {},
+    "C:\\Users\\Junior\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\valdelei.braga\\Documents\\Projetos\\Repositorio\\TG-Envios\\ProcessoImportacaoFatura\\ProcessoImportacao\\ProcessoImportacaoFatura.csproj",
+      "projectUniqueName": "D:\\Repositorios\\ProjetosDeTeste\\TG-Envios\\ProcessosImportacao\\ProcessoImportacaoFatura\\ProcessoImportacao\\ProcessoImportacaoFatura.csproj",
       "projectName": "ProcessoImportacaoFatura",
-      "projectPath": "C:\\Users\\valdelei.braga\\Documents\\Projetos\\Repositorio\\TG-Envios\\ProcessoImportacaoFatura\\ProcessoImportacao\\ProcessoImportacaoFatura.csproj",
-      "packagesPath": "C:\\Users\\valdelei.braga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\valdelei.braga\\Documents\\Projetos\\Repositorio\\TG-Envios\\ProcessoImportacaoFatura\\ProcessoImportacao\\obj\\",
+      "projectPath": "D:\\Repositorios\\ProjetosDeTeste\\TG-Envios\\ProcessosImportacao\\ProcessoImportacaoFatura\\ProcessoImportacao\\ProcessoImportacaoFatura.csproj",
+      "packagesPath": "C:\\Users\\Junior\\.nuget\\packages\\",
+      "outputPath": "D:\\Repositorios\\ProjetosDeTeste\\TG-Envios\\ProcessosImportacao\\ProcessoImportacaoFatura\\ProcessoImportacao\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\valdelei.braga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "netcoreapp3.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "netcoreapp3.0": {
           "projectReferences": {}
         }
       },
@@ -693,7 +693,7 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
+      "netcoreapp3.0": {
         "dependencies": {
           "System.Data.SqlClient": {
             "target": "Package",
@@ -719,7 +719,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

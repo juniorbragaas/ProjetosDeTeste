@@ -29,8 +29,8 @@ namespace ProcessoImportacao
            } */
 
 
-            string ConnectionBanco = "Data Source=SMBH-020815\\SQLEXPRESS;Initial Catalog=TG;Persist Security Info=True;User ID=sa;Password=Sysmap*2020";
-            string ConnectionView = "Data Source=SMBH-020815\\SQLEXPRESS;Initial Catalog=TGView;Persist Security Info=True;User ID=sa;Password=Sysmap*2020";
+            string ConnectionBanco = "Data Source=DESKTOP-72FLPN6\\SQLEXPRESS;Initial Catalog=TG;Persist Security Info=True;User ID=sa;Password=admin123";
+            string ConnectionView = "Data Source=DESKTOP-72FLPN6\\SQLEXPRESS;Initial Catalog=TGView;Persist Security Info=True;User ID=sa;Password=admin123";
             SqlConnection connectionBanco = new SqlConnection(ConnectionBanco);
             SqlConnection connectionView = new SqlConnection(ConnectionView);
             StringBuilder sb = new StringBuilder();

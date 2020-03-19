@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\valdelei.braga\\Documents\\Projetos\\Repositorio\\TG-Envios\\JobEnvioCte\\JobEnvioCte\\JobEnvioCte.csproj": {}
+    "D:\\Repositorios\\ProjetosDeTeste\\TG-Envios\\JobsEnvioWS\\JobEnvioCte\\JobEnvioCte\\JobEnvioCte.csproj": {}
   },
   "projects": {
-    "C:\\Users\\valdelei.braga\\Documents\\Projetos\\Repositorio\\TG-Envios\\JobEnvioCte\\JobEnvioCte\\JobEnvioCte.csproj": {
+    "D:\\Repositorios\\ProjetosDeTeste\\TG-Envios\\JobsEnvioWS\\JobEnvioCte\\JobEnvioCte\\JobEnvioCte.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\valdelei.braga\\Documents\\Projetos\\Repositorio\\TG-Envios\\JobEnvioCte\\JobEnvioCte\\JobEnvioCte.csproj",
+        "projectUniqueName": "D:\\Repositorios\\ProjetosDeTeste\\TG-Envios\\JobsEnvioWS\\JobEnvioCte\\JobEnvioCte\\JobEnvioCte.csproj",
         "projectName": "JobEnvioCte",
-        "projectPath": "C:\\Users\\valdelei.braga\\Documents\\Projetos\\Repositorio\\TG-Envios\\JobEnvioCte\\JobEnvioCte\\JobEnvioCte.csproj",
-        "packagesPath": "C:\\Users\\valdelei.braga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\valdelei.braga\\Documents\\Projetos\\Repositorio\\TG-Envios\\JobEnvioCte\\JobEnvioCte\\obj\\",
+        "projectPath": "D:\\Repositorios\\ProjetosDeTeste\\TG-Envios\\JobsEnvioWS\\JobEnvioCte\\JobEnvioCte\\JobEnvioCte.csproj",
+        "packagesPath": "C:\\Users\\Junior\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositorios\\ProjetosDeTeste\\TG-Envios\\JobsEnvioWS\\JobEnvioCte\\JobEnvioCte\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\valdelei.braga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -41,28 +41,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "dependencies": {
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.1, )"
-            },
-            "System.ServiceModel.Duplex": {
-              "target": "Package",
-              "version": "[4.4.*, )"
-            },
-            "System.ServiceModel.Http": {
-              "target": "Package",
-              "version": "[4.4.*, )"
-            },
-            "System.ServiceModel.NetTcp": {
-              "target": "Package",
-              "version": "[4.4.*, )"
-            },
-            "System.ServiceModel.Security": {
-              "target": "Package",
-              "version": "[4.4.*, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -73,12 +51,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

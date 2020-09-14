@@ -1,1 +1,0 @@
-https://l-lin.github.io/angular-datatables/#/getting-started

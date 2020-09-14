@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TGCTE</name>
+    </assembly>
+    <members>
+        <member name="M:TGCTE.Controllers.CteController.GetAll">
+            <summary>
+            Lista Ctes cadastrados .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.CteController.BuscarPorData(System.String,System.String)">
+            <summary>
+            Procura lista Ctes cadastrados entre um intervalo entre datas de envio .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.FaturaController.GetAll">
+            <summary>
+            Lista Faturas cadastrados .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.FaturaController.BuscarPorData(System.String,System.String)">
+            <summary>
+            Procura lista Faturas cadastrados entre um intervalo entre datas de envio.
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.OcorrenciaController.GetAll">
+            <summary>
+            Lista Ocorrencias cadastrados .
+            </summary>
+        </member>
+        <member name="M:TGCTE.Controllers.OcorrenciaController.BuscarPorData(System.String,System.String)">
+            <summary>
+            Procura lista Ocorrencias cadastrados entre um intervalo entre datas de envio.
+            </summary>
+        </member>
+    </members>
+</doc>

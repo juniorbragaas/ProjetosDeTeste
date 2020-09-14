@@ -10,7 +10,6 @@ using TGCTE.Entities;
 using TGCTE.Repository.Implementation;
 using TGCTE.Repository.Contract;
 using Microsoft.EntityFrameworkCore;
-using TGUsuarios.Repository.Implementation;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.Extensions.PlatformAbstractions;
 using System.IO;
@@ -37,8 +36,6 @@ namespace TGCTE
 
             services.AddScoped<ICteRepository, CteRepository>();
             services.AddScoped<IHistoricoRepository, HistoricoRepository>();
-            services.AddScoped<IUsuariosRepository, UsuariosRepository>();
-            services.AddScoped<ILoginRepository, LoginRepository>();
             services.AddScoped<IFaturaRepository, FaturaRepository>();
             services.AddScoped<IOcorrenciaRepository, OcorrenciaRepository>();
 
@@ -61,11 +58,8 @@ namespace TGCTE
                 c.IncludeXmlComments(caminhoXmlDoc);
             });
 
-            // In production, the Angular files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/dist";
-            });
+            
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -88,7 +82,7 @@ namespace TGCTE
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseSpaStaticFiles();
+            
 
             app.UseMvc(routes =>
             {
@@ -98,18 +92,7 @@ namespace TGCTE
             });
             
 
-            app.UseSpa(spa =>
-            {
-                // To learn more about options for serving an Angular SPA from ASP.NET Core,
-                // see https://go.microsoft.com/fwlink/?linkid=864501
-
-                spa.Options.SourcePath = "ClientApp";
-
-                if (env.IsDevelopment())
-                {
-                    spa.UseAngularCliServer(npmScript: "start");
-                }
-            });
+           
         }
     }
 }

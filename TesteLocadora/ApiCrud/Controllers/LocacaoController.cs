@@ -40,30 +40,7 @@ namespace ApiCrud.Controllers
             }
 
         }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> ProcurarPorId(int? Id)
-        {
-            if (Id == null)
-            {
-                return BadRequest();
-            }
-
-            try
-            {
-                var post = await LocacaoRepository.GetById(Id);
-
-                if (post == null)
-                {
-                    return NotFound();
-                }
-
-                return Ok(post);
-            }
-            catch (Exception)
-            {
-                return BadRequest();
-            }
-        }
+        
        
         [HttpPost]
         [Route("Adicionar")]
@@ -110,58 +87,8 @@ namespace ApiCrud.Controllers
 
             return BadRequest();
         }
-        [HttpDelete]
-        [Route("Apagar")]
-        public async Task<IActionResult> Apagar(int? Id)
-        {
-            int result = 0;
-
-            if (Id == null)
-            {
-                return BadRequest();
-            }
-
-            try
-            {
-                result = await LocacaoRepository.Delete(Id);
-                if (result == 0)
-                {
-                    return NotFound();
-                }
-                return Ok();
-            }
-            catch (Exception)
-            {
-
-                return BadRequest();
-            }
-        }
-        [HttpPut]
-        [Route("Atualizar")]
-        public async Task<IActionResult> UpdatePost([FromBody]Locacao model)
-        {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    await LocacaoRepository.Update(model);
-
-                    return Ok();
-                }
-                catch (Exception ex)
-                {
-                    if (ex.GetType().FullName ==
-                             "Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException")
-                    {
-                        return NotFound();
-                    }
-
-                    return BadRequest();
-                }
-            }
-
-            return BadRequest();
-        }
+  
+       
         [HttpGet("VerificarSeClienteFezLocacao/{id}")]
         public async Task<IActionResult> VerificarSeClienteFezLocacao(int Id)
         {
